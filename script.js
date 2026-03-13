@@ -10,34 +10,17 @@ section.style.display="none";
 
 document.getElementById(id).style.display="block";
 
-let audio=document.getElementById("collegeAudio");
-
-if(id==="home")
-{
-audio.currentTime=0;
-audio.play().catch(()=>{});
-}
-else
-{
-audio.pause();
-audio.currentTime=0;
-}
-
 }
 
 
 
-function showDate(id)
+function openSchedule(page)
 {
 
-let days=document.querySelectorAll(".date-content");
-
-days.forEach(day =>
+if(page!=="")
 {
-day.style.display="none";
-});
-
-document.getElementById(id).style.display="block";
+showSection(page);
+}
 
 }
 
@@ -47,6 +30,9 @@ window.onload=function()
 {
 
 showSection("home");
-showDate("day1");
+
+let audio=document.getElementById("collegeAudio");
+
+audio.play().catch(()=>{});
 
 }
