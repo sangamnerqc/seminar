@@ -1,0 +1,75 @@
+body
+{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header
+{
+background:#003366;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+nav
+{
+background:#222;
+text-align:center;
+padding:10px;
+}
+
+nav button
+{
+background:#0099cc;
+border:none;
+padding:10px 18px;
+margin:5px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+nav button:hover
+{
+background:#0077aa;
+}
+
+.content
+{
+display:none;
+padding:30px;
+background:white;
+margin:20px;
+border-radius:6px;
+}
+
+.date-tabs
+{
+margin-bottom:20px;
+}
+
+.date-tabs button
+{
+background:#444;
+color:white;
+border:none;
+padding:10px 15px;
+margin-right:10px;
+cursor:pointer;
+}
+
+.date-content
+{
+display:none;
+}
+
+footer
+{
+background:#003366;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
