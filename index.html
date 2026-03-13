@@ -32,6 +32,7 @@ In Association with Savitribai Phule Pune University, Pune
 </header>
 
 
+
 <nav>
 
 <button onclick="showSection('home')">Home</button>
@@ -41,13 +42,14 @@ In Association with Savitribai Phule Pune University, Pune
 </nav>
 
 
-<audio id="collegeAudio">
+
+<audio id="collegeAudio" autoplay>
 <source src="Shikshan Prasarak Sa.mp3" type="audio/mpeg">
 </audio>
 
 
 
-<!-- HOME -->
+<!-- HOME PAGE -->
 
 <section id="home" class="content">
 
@@ -58,8 +60,8 @@ In Association with Savitribai Phule Pune University, Pune
 Welcome to the National Level Seminar on  
 <b>"Cutting Edge Research and Innovations"</b>.
 
-This seminar aims to bring together researchers, academicians,
-and students to discuss emerging research trends and innovations.
+This seminar brings together researchers, academicians,
+and students to discuss multidisciplinary innovations.
 
 </p>
 
@@ -75,9 +77,9 @@ and students to discuss emerging research trends and innovations.
 
 <div class="college-image">
 
+<h3>Host Institution</h3>
 
-
-<img src="inauguration.jpeg" alt="inauguration">
+<img src="college.jpg">
 
 </div>
 
@@ -85,51 +87,65 @@ and students to discuss emerging research trends and innovations.
 
 
 
-<!-- SCHEDULE -->
+<!-- SCHEDULE MAIN PAGE -->
 
 <section id="schedule" class="content">
 
 <h2>Seminar Schedule</h2>
 
-<div class="date-tabs">
+<label>Select Date :</label>
 
-<button onclick="showDate('day1')">16 March 2026</button>
-<button onclick="showDate('day2')">17 March 2026</button>
+<select onchange="openSchedule(this.value)">
 
-</div>
+<option value="">Select Date</option>
+<option value="schedule16">16 March 2026</option>
+<option value="schedule17">17 March 2026</option>
 
+</select>
 
-
-<!-- DAY 1 -->
-
-<div id="day1" class="date-content">
-
-<h3>16 March 2026</h3>
+</section>
 
 
 
+<!-- 16 MARCH PAGE -->
+
+<section id="schedule16" class="content">
+
+<h2>16 March 2026</h2>
+
+<p><b>Venue:</b> Seminar Hall – Science Building</p>
+
+<p>
+S. N. Arts, D. J. Malpani Commerce & B. N. Sarda Science College (Autonomous), Sangamner
+</p>
 
 <div class="schedule-image">
 
 <h3>Inauguration Ceremony</h3>
 
-<img src="inauguration.jpeg" alt="Inauguration Ceremony">
+<img src="inauguration.jpeg">
 
 </div>
 
-</div>
+<button onclick="showSection('schedule')">Back</button>
+
+</section>
 
 
 
-<!-- DAY 2 -->
+<!-- 17 MARCH PAGE -->
 
-<div id="day2" class="date-content">
+<section id="schedule17" class="content">
 
-<h3>17 March 2026</h3>
+<h2>17 March 2026</h2>
 
+<p><b>Venue:</b> Conference Hall – Main Campus</p>
 
+<p>
+S. N. Arts, D. J. Malpani Commerce & B. N. Sarda Science College (Autonomous), Sangamner
+</p>
 
-</div>
+<button onclick="showSection('schedule')">Back</button>
 
 </section>
 
@@ -141,13 +157,7 @@ and students to discuss emerging research trends and innovations.
 
 <h2>Seminar Flyer</h2>
 
-<p>You can view the official seminar flyer below.</p>
-
-<iframe
-src="flyer.pdf"
-width="100%"
-height="600px">
-</iframe>
+<iframe src="flyer.pdf" width="100%" height="600"></iframe>
 
 </section>
 
@@ -156,12 +166,9 @@ height="600px">
 <footer>
 
 <p>
-© 2026 National Level Seminar  
-Sangamner College, Sangamner
+© 2026 National Level Seminar – Sangamner College
 </p>
-<p>
-ajitkaranjekar@sangamnercollege.edu.in
-</p>
+
 </footer>
 
 <script src="script.js"></script>
