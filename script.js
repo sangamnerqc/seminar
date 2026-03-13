@@ -31,8 +31,16 @@ window.onload=function()
 
 showSection("home");
 
+}
+
+
+
+/* ANDROID AUDIO FIX */
+
+document.addEventListener("click",function(){
+
 let audio=document.getElementById("collegeAudio");
 
-audio.play().catch(()=>{});
+audio.play();
 
-}
+},{once:true});
