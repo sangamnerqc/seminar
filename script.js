@@ -88,16 +88,16 @@ id=parseInt(id);
 /* 16 MARCH SESSION */
 
 if((id>=101 && id<=111) || (id>=127 && id<=131))
-return "16 March 2026 | 3:30 PM – 5:30 PM | Group G1 | Seminar Hall | Marathi / Sanskrit";
+return "16 March 2026 | 3:30 PM – 5:30 PM | G1 | Seminar Hall | Marathi / Sanskrit";
 
 if(id>=201 && id<=212)
-return "16 March 2026 | 3:30 PM – 5:30 PM | Group G2 | Commerce";
+return "16 March 2026 | 3:30 PM – 5:30 PM | G2 | Commerce";
 
 if((id==301)||(id==302)||(id>=312 && id<=321))
-return "16 March 2026 | 3:30 PM – 5:30 PM | Group G3 | Chemistry / Mathematics / Electronics / Botany / Zoology";
+return "16 March 2026 | 3:30 PM – 5:30 PM | G3 | Chemistry / Mathematics / Electronics / Botany / Zoology";
 
 if(id>=112 && id<=126)
-return "16 March 2026 | 3:30 PM – 5:30 PM | Physics Department | Hindi";
+return "16 March 2026 | 3:30 PM – 5:30 PM | Seminar Hall | Hindi";
 
 if(id>=303 && id<=311)
 return "16 March 2026 | 3:30 PM – 5:30 PM | Physics Department | Physics";
