@@ -5,6 +5,10 @@ margin:0;
 background:#f4f4f4;
 }
 
+
+
+/* HEADER */
+
 header
 {
 background:#003366;
@@ -12,6 +16,10 @@ color:white;
 text-align:center;
 padding:25px;
 }
+
+
+
+/* NAVIGATION */
 
 nav
 {
@@ -29,12 +37,17 @@ margin:5px;
 color:white;
 font-size:16px;
 cursor:pointer;
+border-radius:5px;
 }
 
 nav button:hover
 {
 background:#0077aa;
 }
+
+
+
+/* PAGE CONTENT */
 
 .content
 {
@@ -43,7 +56,12 @@ padding:30px;
 background:white;
 margin:20px;
 border-radius:6px;
+box-shadow:0px 2px 8px rgba(0,0,0,0.2);
 }
+
+
+
+/* COLLEGE IMAGE */
 
 .college-image
 {
@@ -59,6 +77,10 @@ border-radius:10px;
 box-shadow:0px 4px 12px rgba(0,0,0,0.3);
 }
 
+
+
+/* SCHEDULE IMAGE */
+
 .schedule-image
 {
 text-align:center;
@@ -73,12 +95,70 @@ border-radius:10px;
 box-shadow:0px 4px 12px rgba(0,0,0,0.3);
 }
 
+
+
+/* DROPDOWN */
+
 select
 {
 padding:10px;
 font-size:16px;
 margin-top:10px;
+border-radius:5px;
 }
+
+
+
+/* ABSTRACT SEARCH BOX */
+
+#abstract input
+{
+padding:10px;
+font-size:16px;
+width:200px;
+margin-top:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+
+
+/* SEARCH BUTTON */
+
+#abstract button
+{
+padding:10px 18px;
+font-size:16px;
+background:#0099cc;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-left:10px;
+}
+
+#abstract button:hover
+{
+background:#0077aa;
+}
+
+
+
+/* RESULT BOX */
+
+#resultBox
+{
+margin-top:20px;
+padding:20px;
+background:#f9f9f9;
+border-left:5px solid #0099cc;
+border-radius:5px;
+font-size:16px;
+}
+
+
+
+/* FOOTER */
 
 footer
 {
@@ -87,4 +167,36 @@ color:white;
 text-align:center;
 padding:15px;
 margin-top:20px;
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width:600px)
+{
+
+nav button
+{
+display:block;
+width:90%;
+margin:8px auto;
+}
+
+.college-image img
+{
+width:95%;
+}
+
+.schedule-image img
+{
+width:95%;
+}
+
+.content
+{
+margin:10px;
+padding:20px;
+}
+
 }
