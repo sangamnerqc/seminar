@@ -1,8 +1,11 @@
+/* GENERAL PAGE STYLE */
+
 body
 {
-font-family: Arial;
+font-family: Arial, Helvetica, sans-serif;
 margin:0;
 background:#f4f4f4;
+line-height:1.6;
 }
 
 
@@ -17,9 +20,21 @@ text-align:center;
 padding:25px;
 }
 
+header h1
+{
+margin:0;
+font-size:32px;
+}
+
+header h2
+{
+margin:5px;
+font-weight:normal;
+}
 
 
-/* NAVIGATION */
+
+/* NAVIGATION BAR */
 
 nav
 {
@@ -47,7 +62,7 @@ background:#0077aa;
 
 
 
-/* PAGE CONTENT */
+/* PAGE CONTENT SECTIONS */
 
 .content
 {
@@ -97,7 +112,7 @@ box-shadow:0px 4px 12px rgba(0,0,0,0.3);
 
 
 
-/* DROPDOWN */
+/* DROPDOWN MENU */
 
 select
 {
@@ -105,17 +120,18 @@ padding:10px;
 font-size:16px;
 margin-top:10px;
 border-radius:5px;
+border:1px solid #ccc;
 }
 
 
 
-/* ABSTRACT SEARCH BOX */
+/* ABSTRACT SEARCH INPUT */
 
 #abstract input
 {
 padding:10px;
 font-size:16px;
-width:200px;
+width:220px;
 margin-top:10px;
 border-radius:5px;
 border:1px solid #ccc;
@@ -144,16 +160,33 @@ background:#0077aa;
 
 
 
-/* RESULT BOX */
+/* ABSTRACT RESULT DISPLAY */
 
 #resultBox
 {
 margin-top:20px;
 padding:20px;
-background:#f9f9f9;
-border-left:5px solid #0099cc;
-border-radius:5px;
+background:white;
+border-left:6px solid #0099cc;
+border-radius:6px;
+box-shadow:0px 3px 10px rgba(0,0,0,0.2);
 font-size:16px;
+line-height:1.7;
+}
+
+#resultBox b
+{
+color:#003366;
+}
+
+
+
+/* FLYER IFRAME */
+
+iframe
+{
+border:none;
+border-radius:6px;
 }
 
 
@@ -167,11 +200,12 @@ color:white;
 text-align:center;
 padding:15px;
 margin-top:20px;
+font-size:14px;
 }
 
 
 
-/* MOBILE RESPONSIVE */
+/* MOBILE RESPONSIVE DESIGN */
 
 @media screen and (max-width:600px)
 {
@@ -197,6 +231,18 @@ width:95%;
 {
 margin:10px;
 padding:20px;
+}
+
+#abstract input
+{
+width:90%;
+margin-bottom:10px;
+}
+
+#abstract button
+{
+width:90%;
+margin-left:0;
 }
 
 }
