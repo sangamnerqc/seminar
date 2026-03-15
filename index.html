@@ -37,6 +37,7 @@ In Association with Savitribai Phule Pune University, Pune
 
 <button onclick="showSection('home')">Home</button>
 <button onclick="showSection('schedule')">Schedules</button>
+<button onclick="showSection('abstract')">Abstract Presentation</button>
 <button onclick="showSection('flyer')">Flyer</button>
 
 </nav>
@@ -151,6 +152,24 @@ S. N. Arts, D. J. Malpani Commerce & B. N. Sarda Science College (Autonomous), S
 
 
 
+<!-- ABSTRACT PRESENTATION -->
+
+<section id="abstract" class="content">
+
+<h2>Abstract Presentation Details</h2>
+
+<p>Enter your Abstract ID:</p>
+
+<input type="number" id="abstractID" placeholder="Enter Abstract ID">
+
+<button onclick="searchAbstract()">Search</button>
+
+<div id="resultBox" style="margin-top:20px;"></div>
+
+</section>
+
+
+
 <!-- FLYER -->
 
 <section id="flyer" class="content">
@@ -168,9 +187,11 @@ S. N. Arts, D. J. Malpani Commerce & B. N. Sarda Science College (Autonomous), S
 <p>
 © 2026 National Level Seminar – Sangamner College, Sangamner
 </p>
+
 <p>
 ajitkaranjekar@sangamnercollege.edu.in
 </p>
+
 </footer>
 
 <script src="script.js"></script>
