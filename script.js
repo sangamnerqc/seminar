@@ -60,22 +60,26 @@ let rows=data.split(/\r?\n/);
 for(let i=1;i<rows.length;i++)
 {
 
-if(rows[i].trim()==="") continue;
+let row=rows[i].trim();
 
-let cols=rows[i].split(",");
+if(row==="") continue;
 
+/* Extract Abstract ID (second column) */
+
+let parts=row.split(",");
+
+let id=parts[1];
+
+if(id)
+{
 abstractData.push({
-
-id:cols.trim(),
-title:cols.trim(),
-author:cols.trim(),
-subject:cols.trim()
-
+id:id.trim()
 });
+}
 
 }
 
-console.log("Abstracts Loaded:",abstractData);
+console.log("Loaded Abstract IDs:",abstractData);
 
 })
 .catch(error=>{
@@ -158,15 +162,7 @@ result.innerHTML=
 
 "<h3>Presentation Details</h3>"+
 
-"<p><b>Abstract ID :</b> "+found.id+"</p>"+
-
-"<p><b>Author Name :</b> "+found.author+"</p>"+
-
-"<p><b>Abstract Title :</b> "+found.title+"</p>"+
-
-"<p><b>Subject :</b> "+found.subject+"</p>"+
-
-"<hr>"+
+"<p><b>Abstract ID :</b> "+input+"</p>"+
 
 "<p><b>Date :</b> "+schedule.date+"</p>"+
 
