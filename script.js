@@ -13,7 +13,6 @@ section.style.display="none";
 document.getElementById(id).style.display="block";
 }
 
-
 function openSchedule(page)
 {
 if(page!=="")
@@ -22,14 +21,11 @@ showSection(page);
 }
 }
 
-
 window.onload=function()
 {
 showSection("home");
 loadAbstractData();
 }
-
-
 
 /* =========================
 ANDROID AUDIO FIX
@@ -46,14 +42,11 @@ audio.play().catch(()=>{});
 
 },{once:true});
 
-
-
 /* =========================
 ABSTRACT DATABASE
 ========================= */
 
 let abstractData=[];
-
 
 function loadAbstractData()
 {
@@ -73,10 +66,10 @@ let cols=rows[i].split(",");
 
 abstractData.push({
 
-id:cols[1].trim(),
-author:cols[2].trim(),
-title:cols[3].trim(),
-subject:cols[4].trim()
+id:cols.trim(),
+title:cols.trim(),
+author:cols.trim(),
+subject:cols.trim()
 
 });
 
@@ -91,8 +84,6 @@ console.log("CSV Loading Error:",error);
 
 }
 
-
-
 /* =========================
 PRESENTATION SCHEDULE
 ========================= */
@@ -101,7 +92,6 @@ function getSchedule(id)
 {
 
 id=parseInt(id);
-
 
 /* 16 March */
 
@@ -120,8 +110,6 @@ return {date:"16 March 2026",time:"03:30 PM – 05:30 PM",venue:"B.Ed College �
 if(id>=303 && id<=311)
 return {date:"16 March 2026",time:"03:30 PM – 05:30 PM",venue:"Physics Department",hall:"Physics"};
 
-
-
 /* 17 March Morning */
 
 if(id>=150 && id<=162)
@@ -132,8 +120,6 @@ return {date:"17 March 2026",time:"08:30 AM – 10:30 AM",venue:"Hall G2",hall:"
 
 if(id>=132 && id<=142)
 return {date:"17 March 2026",time:"08:30 AM – 10:30 AM",venue:"Hall G3",hall:"Political Science"};
-
-
 
 /* 17 March Afternoon */
 
@@ -146,12 +132,9 @@ return {date:"17 March 2026",time:"01:30 PM – 03:30 PM",venue:"Hall G2",hall:"
 if(id>=143 && id<=149)
 return {date:"17 March 2026",time:"01:30 PM – 03:30 PM",venue:"Hall G3",hall:"Economics"};
 
-
 return null;
 
 }
-
-
 
 /* =========================
 SEARCH ABSTRACT
@@ -162,13 +145,11 @@ function searchAbstract()
 
 let input=document.getElementById("abstractID").value.trim();
 
-let result=document.getElementById("abstractResult");
+let result=document.getElementById("resultBox");
 
 let found=abstractData.find(a => a.id === input);
 
 let schedule=getSchedule(input);
-
-
 
 if(found && schedule)
 {
