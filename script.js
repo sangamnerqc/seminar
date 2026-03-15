@@ -88,7 +88,7 @@ id=parseInt(id);
 /* 16 MARCH SESSION */
 
 if((id>=101 && id<=111) || (id>=127 && id<=131))
-return "16 March 2026 | 3:30 PM – 5:30 PM | G1 | Seminar Hall | Marathi / Sanskrit";
+return "16 March 2026 | 3:30 PM – 5:30 PM | G1 | Marathi / Sanskrit";
 
 if(id>=201 && id<=212)
 return "16 March 2026 | 3:30 PM – 5:30 PM | G2 | Commerce";
