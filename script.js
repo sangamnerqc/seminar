@@ -1,3 +1,7 @@
+/* =========================
+SECTION CONTROL
+========================= */
+
 function showSection(id)
 {
 let sections=document.querySelectorAll(".content");
@@ -10,7 +14,6 @@ document.getElementById(id).style.display="block";
 }
 
 
-
 function openSchedule(page)
 {
 if(page!=="")
@@ -18,7 +21,6 @@ if(page!=="")
 showSection(page);
 }
 }
-
 
 
 window.onload=function()
@@ -29,23 +31,28 @@ loadAbstractData();
 
 
 
-/* ANDROID AUDIO FIX */
+/* =========================
+ANDROID AUDIO FIX
+========================= */
 
 document.addEventListener("click",function(){
 
 let audio=document.getElementById("collegeAudio");
-audio.play();
+
+if(audio)
+{
+audio.play().catch(()=>{});
+}
 
 },{once:true});
 
 
 
-/* ============================
-   ABSTRACT DATABASE
-============================ */
+/* =========================
+ABSTRACT DATABASE
+========================= */
 
 let abstractData=[];
-
 
 
 function loadAbstractData()
@@ -55,15 +62,15 @@ fetch("Abstracts.csv")
 .then(response => response.text())
 .then(data => {
 
-let rows=data.split("\n");
+let rows=data.split(/\r?\n/);
 
 for(let i=1;i<rows.length;i++)
 {
 
+if(rows[i].trim()==="") continue;
+
 let cols=rows[i].split(",");
 
-if(cols.length>4)
-{
 abstractData.push({
 
 id:cols[1].trim(),
@@ -72,24 +79,29 @@ title:cols[3].trim(),
 subject:cols[4].trim()
 
 });
-}
 
 }
 
+console.log("Abstracts Loaded:",abstractData);
+
+})
+.catch(error=>{
+console.log("CSV Loading Error:",error);
 });
 
 }
 
 
 
-/* ============================
-   PRESENTATION SCHEDULE LOGIC
-============================ */
+/* =========================
+PRESENTATION SCHEDULE
+========================= */
 
 function getSchedule(id)
 {
 
 id=parseInt(id);
+
 
 /* 16 March */
 
@@ -141,9 +153,9 @@ return null;
 
 
 
-/* ============================
-   SEARCH ABSTRACT
-============================ */
+/* =========================
+SEARCH ABSTRACT
+========================= */
 
 function searchAbstract()
 {
@@ -152,7 +164,7 @@ let input=document.getElementById("abstractID").value.trim();
 
 let result=document.getElementById("abstractResult");
 
-let found=abstractData.find(a => a.id===input);
+let found=abstractData.find(a => a.id === input);
 
 let schedule=getSchedule(input);
 
