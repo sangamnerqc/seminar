@@ -43,7 +43,7 @@ audio.play().catch(()=>{});
 },{once:true});
 
 /* =========================
-ABSTRACT DATABASE
+LOAD CSV USING PAPAPARSE
 ========================= */
 
 let abstractData=[];
@@ -51,39 +51,20 @@ let abstractData=[];
 function loadAbstractData()
 {
 
-fetch("Abstracts.csv")
-.then(response => response.text())
-.then(data => {
+Papa.parse("Abstracts.csv",{
 
-let rows=data.split(/\r?\n/);
+download:true,
+header:true,
 
-for(let i=1;i<rows.length;i++)
+complete:function(results)
 {
 
-let row=rows[i].trim();
+abstractData=results.data;
 
-if(row==="") continue;
-
-/* Extract Abstract ID (second column) */
-
-let parts=row.split(",");
-
-let id=parts[1];
-
-if(id)
-{
-abstractData.push({
-id:id.trim()
-});
-}
+console.log("CSV Loaded:",abstractData);
 
 }
 
-console.log("Loaded Abstract IDs:",abstractData);
-
-})
-.catch(error=>{
-console.log("CSV Loading Error:",error);
 });
 
 }
@@ -151,7 +132,7 @@ let input=document.getElementById("abstractID").value.trim();
 
 let result=document.getElementById("resultBox");
 
-let found=abstractData.find(a => a.id === input);
+let found=abstractData.find(item => item["Abstract ID"]===input);
 
 let schedule=getSchedule(input);
 
@@ -162,7 +143,15 @@ result.innerHTML=
 
 "<h3>Presentation Details</h3>"+
 
-"<p><b>Abstract ID :</b> "+input+"</p>"+
+"<p><b>Abstract ID :</b> "+found["Abstract ID"]+"</p>"+
+
+"<p><b>Author :</b> "+found["Author Name"]+"</p>"+
+
+"<p><b>Title :</b> "+found["Title of Abstract"]+"</p>"+
+
+"<p><b>Subject :</b> "+found["Subject"]+"</p>"+
+
+"<hr>"+
 
 "<p><b>Date :</b> "+schedule.date+"</p>"+
 
@@ -170,7 +159,7 @@ result.innerHTML=
 
 "<p><b>Venue :</b> "+schedule.venue+"</p>"+
 
-"<p><b>Session / Hall :</b> "+schedule.hall+"</p>";
+"<p><b>Session :</b> "+schedule.hall+"</p>";
 
 }
 else
